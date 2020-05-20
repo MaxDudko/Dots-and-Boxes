@@ -1,0 +1,42 @@
+image: node:latest
+
+stages:
+  - test_lint
+
+test:
+  stage: test_lint
+  extends: .cache
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+  script:
+    - cd server/
+    - npm install
+    - npm test
+
+.lint:
+  stage: test_lint
+  extends: .cache
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+  script:
+    - cd $FOLDER
+    - npm install
+    - npm run lint -s
+
+.cache:
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - $FOLDER/node_modules
+    policy: pull-push
+
+
+lint_server:
+  extends: .lint
+  variables:
+    FOLDER: "server"
+
+lint_client:
+  extends: .lint
+  variables:
+    FOLDER: "client"

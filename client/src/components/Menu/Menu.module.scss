@@ -1,0 +1,15 @@
+.Menu {
+  .table {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  td, th {
+    text-align: center;
+  }
+  .menu {
+    padding: 10px 0;
+  }
+  button {
+    width: 100%;
+  }
+}

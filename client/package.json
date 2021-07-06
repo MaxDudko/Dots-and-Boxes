@@ -24,7 +24,7 @@
     "@types/socket.io-client": "^1.4.32",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "http-proxy-middleware": "^1.0.3",
     "node-sass": "^4.13.1",
